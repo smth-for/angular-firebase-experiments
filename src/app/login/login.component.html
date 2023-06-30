@@ -1,0 +1,37 @@
+<app-cookie-consent></app-cookie-consent>
+
+<div class="container" *ngIf="auth.hasError$ && cookieService.check('cookieConsent')">
+  <div id="email-password">
+    <div *ngIf="signInSignUpFlag" id="signUp">
+      <h4>Sign Up</h4>
+      <input type="email" #emailSignUp placeholder="email@email.com"/>      
+      <input type="password" #passwordSignUp placeholder="you_password">
+      <input type="password" #confirmPasswordSignUp placeholder="confirm_password">
+      <button  (click)="onSignUp(emailSignUp.value, passwordSignUp.value, confirmPasswordSignUp.value)">Sign Up</button>
+      <button (click)="changeFlag()">Sign In</button>
+  
+    </div>
+    <div *ngIf="!signInSignUpFlag" id="signIn">
+      <h4>Sign In</h4>
+      <input type="email" #emailSignIn placeholder="email@email.com">
+      <input type="password" #passwordSignIn placeholder="123456789">
+      <button (click)="onSignIn(emailSignIn.value, passwordSignIn.value)">Sign In</button>
+      <button (click)="changeFlag()">New User? Sign Up</button>
+    </div>
+  
+    <span id="f-pass" (click)="forgetPassword()">Forget the password?</span>
+  
+    <div class="forget-password-div" style="display: none;">
+      <h2>Forget Password</h2>
+    </div>
+  </div>
+  
+  
+  <div id="alternative-logins">
+    <button id="gitHub-btn" (click)="loginViaGitHub()" >GitHub</button>
+    <button id="google-btn" (click)="loginViaGoogleAuth()">Google</button>
+  </div>
+</div>
+
+<app-forget-password *ngIf="fPass" (onFPClick)="forgetPassword()"></app-forget-password>
+<app-popup *ngIf="auth.hasError$ | async"></app-popup>

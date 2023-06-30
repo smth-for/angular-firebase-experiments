@@ -1,0 +1,21 @@
+<div *ngIf="!cookieService.check('cookieConsent')" class="cookie-consent">
+    <p class="cookie-text">
+        This website uses cookies. <br><br>
+
+        Lorem ipsum dolor sit amet, 
+        consectetur adipiscing elit, 
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Nisl condimentum id venenatis a condimentum. 
+        Condimentum mattis pellentesque id nibh tortor. 
+        Sed egestas egestas fringilla phasellus faucibus scelerisque. 
+        Risus sed vulputate odio ut. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies. 
+        Aenean euismod elementum nisi quis. Congue quisque egestas diam in arcu cursus euismod quis viverra. 
+        Suspendisse ultrices gravida dictum fusce ut placerat. Vel risus commodo viverra maecenas accumsan lacus vel.
+    </p>
+
+    <div class="inline">
+        <button class="btn btn-primary" (click)="acceptCookies()"> Accept </button>
+        <button class="btn btn-danger" (click)="rejectCookies()"> Reject </button>
+    </div>
+    
+</div>

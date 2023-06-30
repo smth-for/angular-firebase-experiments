@@ -1,0 +1,58 @@
+body{
+    position: relative;
+}
+
+#signIn, #signUp {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#f-pass {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+#f-pass:click {
+    user-select: none;
+    color: blueviolet;
+}
+
+#email-password, #alternative-logins {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);
+    align-items: center;
+    justify-content: space-around;
+}
+
+#email-password {
+    display: block;
+}
+
+#popup {
+    width:160px;
+    height:80px;
+    padding:20px;
+    background-color:gray;    
+    position:absolute;
+    top:100px;
+    left:100px;
+    display:none;
+}
+
+#gitHub-btn, #google-btn {
+    margin-top: 10px;
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

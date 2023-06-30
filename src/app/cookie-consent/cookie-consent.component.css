@@ -1,0 +1,60 @@
+.cookie-consent {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 60%;
+    z-index: 1;
+
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    
+
+    background-color: aliceblue;
+    color: black;
+    border-radius: 10px;
+
+    border: 1px solid none;
+}
+
+.cookie-text {
+    border: 1px solid none;
+    width: 60%;
+    text-align: center;
+}
+
+.inline {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+    border: 1px solid none;
+}
+
+.btn {
+    position: relative;
+    width: 150px;
+    height: 40px;
+
+    font-size: medium;
+
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    color: aliceblue;
+    background-color: rgb(30, 176, 30);
+}
+
+.btn-danger {
+    color: aliceblue;
+    background-color: rgb(210, 36, 36);
+}

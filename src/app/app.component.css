@@ -1,0 +1,36 @@
+body{
+    position: relative;
+}
+
+#signIn, #signUp {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#f-pass {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+
+}
+
+
+#f-pass:click {
+    user-select: none;
+    color: blueviolet;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);
+    align-items: center;
+}

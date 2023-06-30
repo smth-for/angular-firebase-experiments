@@ -1,0 +1,29 @@
+<div class="container" *ngIf="userService.dbUser$ | async as user">
+  <img *ngIf="user.photoURL" id="profile-picture" src="{{user.photoURL}}" alt="profile-picture">
+  <p>Welcome back {{user?.displayName}} </p>
+  <table id="user-info-table" *ngIf="userService.authUser$ | async as authUser">
+    <tr> <th style="text-align: left;"> Email: </th> <td>{{user.email}}</td> </tr>
+    <tr> <th style="text-align: left;"> Municipality: </th> <td >
+      <div > {{ user?.town }} </div>
+      <div *ngIf="!user?.town"> 
+        <select id="municipality" #municipality>
+          <option value="default" disabled> -- Select your municipality -- </option>
+          <option *ngFor="let m of databaseService.municipality$ | async" [value]="m"> {{m}} </option>
+        </select>
+        <button (click)="insertTown(municipality.value)">Enter</button></div>
+      </td> 
+    </tr>
+    <tr> <th>Email Verified: </th> 
+      <div *ngIf="authUser?.emailVerified"> {{authUser?.emailVerified}} </div>
+      <div *ngIf="!authUser?.emailVerified"> <button (click)="verifyEmail()"> VerifyAccount </button></div>
+    </tr>
+  </table>
+  <menu *ngIf="userService.authUser$ | async as authUser">
+    <button (click)="logout()">Logout</button>
+    <button *ngIf="(authUser.providerData[0].providerId === 'password')" (click)="changePassword()">Change Password</button> 
+    <button (click)="optOut()">Opt out</button> 
+    <button (click)="deleteAccount()">Delete Account</button> 
+    <button (click)="count()">COUNT</button> 
+  </menu>
+
+</div>

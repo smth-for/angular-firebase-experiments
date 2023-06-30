@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-picture {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+#user-info-table {
+    text-align: left;
+    align-items: start;
+}
